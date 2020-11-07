@@ -29,7 +29,7 @@ int startTime;
 int Time;
 
 // POST interval (ms)
-const int postInterval = *1000;
+const int postInterval = 5*60*1000;
 
 // Use for measuring concentration
 const float powerMaxThreshold = 2.00;
