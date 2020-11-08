@@ -36,8 +36,6 @@
 * 着座検知
 着座検知に際しては，Infineon社に提供して頂いた気圧センサDPS310を利用しており，袋の中の気圧が100100.00[Pa]を超えると，ユーザ―が着座していると判断している．
 
-[[1] 大久保　雅史，藤村　安那："加速度センサーを利用した集中度合い推定システムの提案"，WISS2008，2008](http://www.wiss.org/WISS2008Proceedings/posters/paper0038.pdf)
-
 ## セットアップ方法
 ### 基板の作製
  本デバイスの基板の外観と配線図を以下に示す．配線図に従いESP32 DevKitC ESP-WROOM-32 開発ボード（以下，esp32），GY-521，Shield2Go pressure DPS310を配線する．
@@ -57,6 +55,7 @@
 ・[Arduino core for the ESP32](https://github.com/espressif/arduino-esp32)によるesp32の開発環境構築．
 ・[DPS3210開発用ライブラリ](https://github.com/Infineon/DPS310-Pressure-Sensor)の取得．
 
-
+## 参考文献
+[[1] 大久保　雅史，藤村　安那："加速度センサーを利用した集中度合い推定システムの提案"，WISS2008，2008](http://www.wiss.org/WISS2008Proceedings/posters/paper0038.pdf)
 
 
