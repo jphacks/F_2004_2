@@ -9,7 +9,7 @@
 ＊ 本デバイスの利用方法は本アプリの[紹介動画](https://youtu.be/IdvRumHTEvc)でも確認できる．
 
 ## POST Request
- MIME typeは"application/x-www-form-urlencoded"を用い，5分ごとに以下のフォーマットで測定したデータをサーバーに送信する．
+　MIME typeは"application/x-www-form-urlencoded"を用い，5分ごとに以下のフォーマットで測定したデータをサーバーに送信する．
 
 | key | description |
 | ------------- | ------------- |
