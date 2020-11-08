@@ -1,6 +1,7 @@
 # 着座検知・集中力測定デバイス
 
-![Screenshot_20201108-182853](https://user-images.githubusercontent.com/50434558/98461591-bc4d9200-21f0-11eb-8bb9-8eb5cdadc0cf.png)
+
+![デバイス写真-2](https://user-images.githubusercontent.com/50434558/98461820-b8bb0a80-21f2-11eb-84b9-a4440f1039c4.jpg)
 
 ## 概要
 本デバイスは，加速度センサおよび気圧センサを用いてユーザーが着座しているかどうか検知し，着座している場合にはどの程度作業に集中しているかを測定する座布団型デバイスである．なお，測定結果は，本アプリ専用のデータベース（[F_2004](https://github.com/jphacks/F_2004)）に5分ごとにPOSTリクエストによって送信する．
@@ -19,10 +20,12 @@ MIME typeは"application/x-www-form-urlencoded"を用い，5分ごとに以下�
  
  **構成要素**
  
-![PXL_20201108_044939789 MP](https://user-images.githubusercontent.com/50434558/98461570-8b6d5d00-21f0-11eb-9532-92a6f6402e71.jpg)
+![デバイス写真-4](https://user-images.githubusercontent.com/50434558/98461843-ec963000-21f2-11eb-8366-78c273a2e421.jpg)
  
  **使用時の外観**
- ![PXL_20201107_024959575 MP-min](https://user-images.githubusercontent.com/50434558/98436293-a28f4a80-211d-11eb-8fc8-489697d8894f.jpg)
+ 
+![デバイス写真-3](https://user-images.githubusercontent.com/50434558/98461826-c7a1bd00-21f2-11eb-8e7d-e790cae70e3a.jpg)
+
 
 本デバイスはこのように基板の入った袋の様な外観をしており，袋の中に本体である基板と給電用のモバイルバッテリーが入っている．使用するにはまずモバイルバッテリーと基板が接続し，基板に給電していることを確認する．基板の部分は椅子の背もたれに近くユーザーが踏まない箇所に固定する．そして，ユーザーが袋の上に着座して作業を行うことで使用できる．使用しないときにはモバイルバッテリーの給電を停止するか基板との接続を解除する．なお，集中力の測定方法は文献[1]を参照しており，条件を合わせるためにも使用する椅子はキャリー椅子であることが望ましい．
 　
@@ -38,7 +41,7 @@ MIME typeは"application/x-www-form-urlencoded"を用い，5分ごとに以下�
 本デバイスの基板の外観と配線図を以下に示す．
  
  **基板**
-![PXL_20201107_082400095](https://user-images.githubusercontent.com/50434558/98461595-cbccdb00-21f0-11eb-943f-06929ab401e1.jpg)
+![デバイス写真-1](https://user-images.githubusercontent.com/50434558/98461814-a8a32b00-21f2-11eb-95d8-9074ecb4b546.jpg)
 
  **配線図**
  ![配線図](https://user-images.githubusercontent.com/50434558/98437266-39f79c00-2124-11eb-94aa-d2594b407a95.jpg)
