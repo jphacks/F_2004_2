@@ -19,7 +19,8 @@ const int user_id = 1;
 
 // for dps310 
 Dps310 Dps310PressureSensor = Dps310();
-const float detectSittingThreshold = 100100.00;
+const float detectSittingThreshold = 50.00;
+float pressureOffset = 0;
 
 // API url
 const char* URL = "http://load-balancer-1-469612606.ap-northeast-1.elb.amazonaws.com/api/concentration_values";
@@ -33,7 +34,7 @@ const int postInterval = 10*1000;
 
 // Use for measuring concentration
 const float powerMaxThreshold = 2.00;
-float offset= 0;
+float powerOffset= 0;
 float power = 0;
 int count = 0;
 
@@ -75,7 +76,7 @@ void calcPower() {
   acc_y = ((float)raw_acc_y) / 16384.0;
   acc_z = ((float)raw_acc_z) / 16384.0;
 
-  power += ((acc_x * acc_x + acc_y * acc_y + acc_z * acc_z) - offset);
+  power += ((acc_x * acc_x + acc_y * acc_y + acc_z * acc_z) -powerOffset);
   count++;
 
 //  //For Debug
@@ -107,16 +108,12 @@ void setupMPU6050() {
 
   // define offset
   calcPower();
-  offset = power - 1.0;
+  powerOffset = power - 1.0;
   power = 0;
 
 //  // For Debug
 //  Serial.print(" offset: ");
 //  Serial.println(offset);
-}
-
-void setupDps310() {
-  Dps310PressureSensor.begin(Wire);
 }
 
 void setupWiFi() {
@@ -192,6 +189,11 @@ float getPressure() {
   return pressure;
 }
 
+void setupDps310() {
+  Dps310PressureSensor.begin(Wire);
+  pressureOffset = getPressure();
+}
+
 int calcConcentrationValue() {
   float maximumPower = powerMaxThreshold * count;
   float base = (maximumPower - 1.0 * count) / 10.0;
@@ -229,7 +231,7 @@ int detectSitting() {
   float pressure = getPressure();
 
   // If not detected sitting or something wrong with sensor, is_sitting = 0.
-  if(pressure >= detectSittingThreshold) is_sitting = 1;
+  if(pressure - pressureOffset >= detectSittingThreshold) is_sitting = 1;
   else is_sitting = 0;
 
 //  //For Debug
